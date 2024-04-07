@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acknowledgement</title>
+</head>
+<body>
+    <% if (type == 1) { %>
+        <h2>Date fetched</h2>
+        <div><%= obj %></div>
+    <% } else if (type == 2) { %>
+        <h2>Data Saved</h2>
+    <% } else if (type==3) { %>
+        <h2>Data updated</h2>
+    <% } else if(type==4) { %>
+        <h2>Data deleted</h2>
+    <% } else { %>
+        <h2>Request not fulfilled</h2>
+    <% } %>
+</body>
+</html>

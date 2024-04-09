@@ -1,6 +1,6 @@
 import {mongoose} from "mongoose";
-import {connString} from "./paths.js";
-await mongoose.connect(connString);
+import "dotenv/config.js";
+await mongoose.connect(`${process.env.connString}`);
 const employeeSchema = new mongoose.Schema({
     name: {type:String,required:true},
     salary: {type:Number,required:true},
@@ -47,7 +47,6 @@ export const updateEmployee = async function(obj){
     for (const key in alreadyExists) {
         const newElement = obj[key];
         if(newElement != null){
-            //
             alreadyExists[key] = newElement;
         }
     }

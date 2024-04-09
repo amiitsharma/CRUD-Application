@@ -3,3 +3,4 @@ node_modules
 postcss.config.cjs
 tailwind.config.js
 public/stylesheets/tailwind.css
+.env

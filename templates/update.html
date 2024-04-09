@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
 </head>
 <body>
-    <div class="flex w-96 h-96 justify-center items-center">
-            <div class="w-1/2 h-1/2">
-                <form action="/update/acknowledgement" method="post">
-                    <input type="text" placeholder="Name" name="name"/>
-                    <input type="text" placeholder="Salary" name="salary"/>
-                    <input type="text" placeholder="Language" name="language"/>
-                    <input type="text" placeholder="City" name="city"/>
-                    <input type="text" placeholder="isManager" name="isManager"/>
-                    <input type="submit" value="Save" class="bg-green-500 text-4xl text-white" />
-                </form>
-            </div>
-    </div>
+    <div class="flex w-screen h-screen justify-center items-center">
+        <div class="w-6/12 h-6/12">
+            <form action="/update/acknowledgement" method="post">
+                <div class="flex flex-col gap-y-1.5">
+                    <div class="flex justify-center"><input type="text" placeholder="Name" name="name" class="border-solid border-2 border-black-600 ..."/></div>
+                    <div class="flex justify-center"><input type="text" placeholder="Salary" name="salary" class="border-solid border-2 border-black-600 ..."/></div>
+                    <div class="flex justify-center"><input type="text" placeholder="Language" name="language" class="border-solid border-2 border-black-600 ..."/></div>
+                    <div class="flex justify-center"><input type="text" placeholder="City" name="city" class="border-solid border-2 border-black-600 ..."/></div>
+                    <div class="flex justify-center"><input type="text" placeholder="isManager" name="isManager" class="border-solid border-2 border-black-600 ..."/></div>
+                    <div class="flex justify-center"><input type="submit" value="Update" class="bg-yellow-500 text-2xl text-white p-2 rounded-full ... hover:cursor-pointer" /></div>
+                </div>
+            </form>
+        </div>
+</div>
 </body>
 </html>

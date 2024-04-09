@@ -4,19 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acknowledgement</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
 </head>
 <body>
+    <script type="text/javascript">
+        var error = <%= type %>
+        
+        if(error==5)
+        {
+        alert("Types of data for correcting your input.Also all fields are required\n"+"name:Only alphabets allowed,\nsalary:Only alphabets allowed,\nlanguage:Only alphabets allowed,\ncity:Only alphabets allowed,\nisManager:true or false");
+        }
+    </script>
+    <div class="flex w-screen h-screen justify-center">
+    <div  class="w-[96vw] mt-2">
     <% if (type == 1) { %>
-        <h2>Date fetched</h2>
-        <div><%= obj %></div>
+        <div class="flex justify-between">
+        <div>
+        <h2 class="text-4xl">Date fetched</h2>
+        </div>
+        <div>
+        <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
+        </div>
+        <% for (const iterator of obj) { %>
+            <div><%= iterator %></div>
+        <% } %>
     <% } else if (type == 2) { %>
-        <h2>Data Saved</h2>
+        <h2 class="text-4xl">Data Saved</h2>
+        <div class="mt-5">
+            <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
     <% } else if (type==3) { %>
-        <h2>Data updated</h2>
+        <h2 class="text-4xl">Data Updated</h2>
+        <div class="mt-5">
+        <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
     <% } else if(type==4) { %>
-        <h2>Data deleted</h2>
+        <h2 class="text-4xl">Data Deleted</h2>
+        <div class="mt-5">
+        <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
+    <% } else if(type==6) { %>
+        <div class="flex justify-between">
+        <div>   
+        <h2 class="text-4xl">Data Fetched</h2>
+        </div>
+        <div> 
+        <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
+        </div>
+        <% for (const iterator of obj) { %>
+        <div><%= iterator %></div>
+        <% } %>
     <% } else { %>
-        <h2>Request not fulfilled</h2>
+        <h2 class="text-4xl">Request not fulfilled</h2>
+        <div class="mt-5">
+        <button class="bg-blue-400 text-2xl text-white p-2 px-4 rounded-full ..."><a href="/">Home</a></button>
+        </div>
     <% } %>
+</div>
+    </div>
 </body>
 </html>

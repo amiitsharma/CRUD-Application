@@ -1,13 +1,12 @@
 import {mongoose} from "mongoose";
-await mongoose.connect("mongodb://localhost:27017/Company");
-//
-//mongodb://localhost:27017
+import {connString} from "./paths.js";
+await mongoose.connect(connString);
 const employeeSchema = new mongoose.Schema({
     name: {type:String,required:true},
     salary: {type:Number,required:true},
     language: {type:String,required:true},
     city: {type:String,required:true},
-    isManager: {type:Boolean,required:[true,false]}
+    isManager: {type:Boolean,requireed:true}
 });
 const Employee = mongoose.model('Employee',employeeSchema);
 export const saveEmployee = async function(obj){
@@ -21,7 +20,16 @@ export const saveEmployee = async function(obj){
 }
 export const findEmployee = async function(name){
     try{
-    let res = await Employee.find({name:`${name}`})
+    let res = await Employee.find({name:`${name}`},{_id:0,__v:0})
+    return res;
+    }
+    catch{
+        throw Error("Can't find");
+    }
+}
+export const findAllEmployee = async function(){
+    try{
+    let res = await Employee.find({},{_id:0,__v:0})
     return res;
     }
     catch{
@@ -62,4 +70,5 @@ export const deleteEmployee = async function(name){
         throw Error("can't delete");
     }
 }
+
 

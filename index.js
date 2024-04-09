@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { saveEmployee, findEmployee, updateEmployee, deleteEmployee, findAllEmployee } from "./main.js";
-const port = 3000;
+const port = process.env.PORT||3000;
 const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');

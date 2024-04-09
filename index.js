@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { saveEmployee, findEmployee, updateEmployee, deleteEmployee, findAllEmployee } from "./main.js";
-const port = process.env.PORT||3000;
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -29,26 +29,50 @@ app.use(function (req, res, next) {
     const b = req.body.language;
     const c = req.body.city;
     if (a != null) {
+        let cnt = 0;
         for (const it of a) {
-            if (!(it >= 'A' && it <= 'Z' || (it >= 'a' && it <= 'z'))) {
+            if (cnt == 0 && it == ' ') {
                 res.locals.type = 5;
                 return res.render("response.ejs", { root: '.' });
+            }
+            else if (!((it >= 'A' && it <= 'Z') || (it >= 'a' && it <= 'z') || it == ' ')) {
+                res.locals.type = 5;
+                return res.render("response.ejs", { root: '.' });
+            }
+            else{
+                cnt=1;
             }
         }
     }
     if (b != null) {
+        let cnt = 0;
         for (const it of b) {
-            if (!(it >= 'A' && it <= 'Z' || (it >= 'a' && it <= 'z'))) {
+            if (cnt == 0 && it == ' ') {
                 res.locals.type = 5;
                 return res.render("response.ejs", { root: '.' });
+            }
+            else if (!((it >= 'A' && it <= 'Z') || (it >= 'a' && it <= 'z') || it == ' ')) {
+                res.locals.type = 5;
+                return res.render("response.ejs", { root: '.' });
+            }
+            else{
+                cnt=1;
             }
         }
     }
     if (c != null) {
+        let cnt = 0;
         for (const it of c) {
-            if (!(it >= 'A' && it <= 'Z' || (it >= 'a' && it <= 'z'))) {
+            if (cnt == 0 && it == ' ') {
                 res.locals.type = 5;
                 return res.render("response.ejs", { root: '.' });
+            }
+            else if (!((it >= 'A' && it <= 'Z') || (it >= 'a' && it <= 'z') || it == ' ')) {
+                res.locals.type = 5;
+                return res.render("response.ejs", { root: '.' });
+            }
+            else{
+                cnt=1;
             }
         }
     }
